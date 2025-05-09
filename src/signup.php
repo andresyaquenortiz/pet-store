@@ -7,8 +7,6 @@ $lname = $_POST['l_name'];
 $email = $_POST['e_mail'];
 $passw = $_POST['p_assw'];
 
-$hashed_password = password_hash($passw, PASSWORD_DEFAULT);
-
 $sql_validate_email = "
         select 
             count(id) as total
@@ -33,7 +31,7 @@ if ($ans) {
         if ($ans) {
             //echo "User has been created successfully";
             echo "<script>alert('User has been created, Go to login!')</script>";
-            header('Refresh:0,URL=http://localhost/pet-store/src/signin.html');
+            header('Refresh:0,URL=http://localhost/pet-store/src/home.php');
         } else {
             echo "Error";
         }
